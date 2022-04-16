@@ -1,0 +1,70 @@
+// ==============================
+// Custom style
+// ==============================
+// You can override the variables in _variables.scss to customize the style
+
+$theme-color-config: 'Green';
+
+// Default theme color map
+$theme-color-map: (
+  'Default': #c05b4d #f8f5ec,
+  'Mint Green': #16982B #f5f5f5,
+  'Cobalt Blue': #0047AB #f0f2f5,
+  'Hot Pink': #FF69B4 #f8f5f5,
+  'Dark Violet': #9932CC #f5f4fa,
+  'Green': #13b585 #d6e7df,
+);
+// Check theme color config.
+// if it does not exist, use default theme color.
+@if not(map-has-key($theme-color-map, $theme-color-config)) {
+  $theme-color-config: 'Green';
+}
+$theme-color-list: map-get($theme-color-map, $theme-color-config);
+
+// Default theme color of the site.
+$theme-color: nth($theme-color-list, 1) !default;
+
+// Deputy theme color of the site.
+$deputy-color: nth($theme-color-list, 2) !default;
+
+
+// ========== Code ========== //
+// Color of the code.
+$code-color: #0e945f !default;
+
+// Font size of code.
+$code-font-size: 0.9em !default;
+
+// Font family of the code.
+// $code-font-family: Consolas, Monaco, Menlo, "DejaVu Sans Mono",
+//  "Bitstream Vera Sans Mono", "Courier New", monospace !default;
+$code-font-family: 'JetBrains Mono', 'Courier New','YaHei' monospace !default;
+// Color of the code background.
+// $code-background: $deputy-color !default;
+$code-background: #f6f8fa !default;
+
+// @font-face {
+//   font-family: 'JetBrains Mono';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: url('https://fonts.gstatic.com/s/jetbrainsmono/v11/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOV.woff2') format('woff2');
+//   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+// }
+
+//font
+//JetBrains Mono 字体
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+//Cormorant Garamond 字体
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+// Font size of the logo.
+$logo-font-size: 48px !default;
+
+// Font family of the logo.
+$logo-font-family: 'Cormorant Garamond', serif !default;
+
+//目录列表样式
+
+// List style of the post toc list. 
+$post-toc-list-style: circle !default;
+
